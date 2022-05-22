@@ -16,3 +16,4 @@ FROM mcr.microsoft.com/dotnet/core/runtime:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/albiondata-sql-dotNet/out ./
 ENTRYPOINT ["dotnet", "albiondata-sql-dotNet.dll"]
+#edit
