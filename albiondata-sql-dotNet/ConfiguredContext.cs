@@ -1,5 +1,6 @@
 using System;
 using Lancelot.Models;
+using Lancelot.*;
 using Microsoft.EntityFrameworkCore;
 
 namespace albiondata_sql_dotNet
