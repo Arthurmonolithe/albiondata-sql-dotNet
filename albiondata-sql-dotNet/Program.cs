@@ -152,6 +152,8 @@ namespace albiondata_sql_dotNet
             dbOrder.UnitPriceSilver = marketOrderUpdate.UnitPriceSilver;
             dbOrder.UpdatedAt = DateTime.UtcNow;
             dbOrder.Amount = marketOrderUpdate.Amount;
+            dbOrder.SellerName = marketOrderUpdate.SellerName;
+            dbOrder.BuyerName = marketOrderUpdate.BuyerName;
             dbOrder.LocationId = marketOrderUpdate.LocationId;
             dbOrder.DeletedAt = null;
             context.MarketOrders.Update(dbOrder);
