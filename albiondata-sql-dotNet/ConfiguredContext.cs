@@ -1,5 +1,5 @@
 using System;
-using Lancelot.Models;
+using AlbionData.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace albiondata_sql_dotNet
@@ -45,12 +45,6 @@ namespace albiondata_sql_dotNet
         entity.Property(e => e.AuctionType)
               .HasColumnName("auction_type")
               .HasMaxLength(32);
-        entity.Property(e => e.SellerName)
-              .HasColumnName("seller_name")
-              .HasMaxLength(64);
-        entity.Property(e => e.BuyerName)
-              .HasColumnName("buyer_name")
-              .HasMaxLength(64);
         entity.Property(e => e.EnchantmentLevel)
               .HasColumnName("enchantment_level");
         entity.Property(e => e.Expires)
