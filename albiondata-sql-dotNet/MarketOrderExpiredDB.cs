@@ -15,6 +15,8 @@ namespace albiondata_sql_dotNet
     public ulong UnitPriceSilver { get; set; }
     public uint Amount { get; set; }
     public string AuctionType { get; set; }
+    public string SellerName { get; set; }
+    public string BuyerName { get; set; }
     public DateTime Expires { get; set; }
 
     [Column("albion_id")]
