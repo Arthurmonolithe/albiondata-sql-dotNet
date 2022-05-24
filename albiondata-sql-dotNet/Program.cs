@@ -276,7 +276,7 @@ expires < UTC_TIMESTAMP()
 OR
 updated_at < DATE_ADD(UTC_TIMESTAMP(), INTERVAL -{MaxAgeHours} HOUR)
 )
-LIMIT {batchSize}
+LIMIT {batchSize};
 
 DELETE a
 FROM market_orders a
