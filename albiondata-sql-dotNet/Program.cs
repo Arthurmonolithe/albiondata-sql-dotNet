@@ -266,7 +266,8 @@ namespace albiondata_sql_dotNet
           // Delete old market orders
           if (lastDeletedOrderCount >= batchSize)
           {
-            lastDeletedOrderCount = context.Database.ExecuteSqlRaw(@$"DELETE
+            lastDeletedOrderCount = context.Database.ExecuteSqlRaw(@$"INSERT INTO market_orders_expired
+SELECT *
 FROM market_orders
 WHERE deleted_at IS NULL
 AND
