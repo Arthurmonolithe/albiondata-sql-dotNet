@@ -30,7 +30,7 @@ namespace albiondata_sql_dotNet
 
     [Option(Description = "Max age in Hours that orders exist before deletion", ShortName = "a", ShowInHelpText = true)]
     [Range(1, 168)]
-    public static int MaxAgeHours { get; set; } = 24;
+    public static int MaxAgeHours { get; set; } = 480;
 
     [Option(Description = "Enable Debug Logging", ShortName = "d", LongName = "debug", ShowInHelpText = true)]
     public static bool Debug { get; set; }
@@ -276,7 +276,12 @@ expires < UTC_TIMESTAMP()
 OR
 updated_at < DATE_ADD(UTC_TIMESTAMP(), INTERVAL -{MaxAgeHours} HOUR)
 )
-LIMIT {batchSize}");
+LIMIT {batchSize}
+
+DELETE a
+FROM market_orders a
+INNER JOIN market_orders_expired b ON a.id = b.id;
+");
             totalCount += lastDeletedOrderCount;
             logger.LogInformation($"Expired {lastDeletedOrderCount} Market Orders. Total Order/History Expiration: {totalCount}");
             Thread.Sleep(sleepTime);
