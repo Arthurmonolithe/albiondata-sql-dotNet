@@ -280,8 +280,7 @@ LIMIT {batchSize}
 
 DELETE a
 FROM market_orders a
-INNER JOIN market_orders_expired b ON a.id = b.id;
-");
+INNER JOIN market_orders_expired b ON a.id = b.id");
             totalCount += lastDeletedOrderCount;
             logger.LogInformation($"Expired {lastDeletedOrderCount} Market Orders. Total Order/History Expiration: {totalCount}");
             Thread.Sleep(sleepTime);
