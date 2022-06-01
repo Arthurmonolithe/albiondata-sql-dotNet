@@ -30,7 +30,7 @@ namespace albiondata_sql_dotNet
 
     [Option(Description = "Max age in Hours that orders exist before deletion", ShortName = "a", ShowInHelpText = true)]
     [Range(1, 168)]
-    public static int MaxAgeHours { get; set; } = 480;
+    public static int MaxAgeHours { get; set; } = 168;
 
     [Option(Description = "Enable Debug Logging", ShortName = "d", LongName = "debug", ShowInHelpText = true)]
     public static bool Debug { get; set; }
