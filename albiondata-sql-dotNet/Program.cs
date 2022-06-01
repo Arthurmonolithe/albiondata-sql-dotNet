@@ -287,7 +287,7 @@ INNER JOIN market_orders_expired b ON a.id = b.id");
           }
 
           // Delete old hourly history records
-          if (lastDeletedHistoryCount >= batchSize)
+/**          if (lastDeletedHistoryCount >= batchSize)
           {
             lastDeletedHistoryCount = context.Database.ExecuteSqlRaw(@$"DELETE
 FROM market_history
@@ -298,7 +298,7 @@ LIMIT {batchSize}");
             logger.LogInformation($"Expired {lastDeletedHistoryCount} Market Histories. Total Order/History Expiration: {totalCount}");
             Thread.Sleep(sleepTime);
           }
-
+*/
           // Keep expiring when we are expiring large numbers at a time
           // Stop expiring when at less than a full batch
           if (lastDeletedOrderCount >= batchSize || lastDeletedHistoryCount >= batchSize)
